@@ -7,22 +7,44 @@
 ****************************************************** */
 
 -- Pregunta 1
-select nom,icao from companyia where pais = 'Spain' order by icao;
+select nom, icao
+from companyia
+where pais = 'Spain'
+order by icao;
 
 -- Pregunta 2
-select 'No ho sé';
+select num_serie, fabricant, any_fabricacio as "any", companyia
+from avio
+where fabricant not like "Boeing"
+  and any_fabricacio >= 2020
+order by any_fabricacio, fabricant, num_serie;
 
 -- Pregunta 3
-select 'No ho sé';
+select concat ("L'aeroport ",nom," està a ",ciutat," i va ser construït l'any ", any_construccio) as "aeroport"
+from aeroport
+where pais = 'Spain'
+order by nom;
 
 -- Pregunta 4
-select 'No ho sé';
+select nom, pais, char_length(nom) as "longitud"
+from aeroport
+where char_length(nom)
+between 7 and 9
+  and nom like '%e%e%e%'
+order by longitud desc, pais;
 
 -- Pregunta 5
-select 'No ho sé';
+select num_serie
+from avio
+where any_fabricacio = 2008
+  and (fabricant = "Concorde" or companyia = "Alitalia");
 
--- Pregunta 6
-select 'No ho sé';
+-- Pregunta 6 DUDA AQUÍ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! no encuentro nada de "Barcelona"
+select concat (cognom,", ",nom)
+from passatger
+where nom like '%k%k%'
+  or cognom like '%k%k%'
+order by cognom;
 
 -- Pregunta 7
 select 'No ho sé';
