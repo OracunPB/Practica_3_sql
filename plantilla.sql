@@ -1,13 +1,13 @@
 /* *****************************************************
   INSTITUT TIC de Barcelona
-    CFGS _____________________________
+    CFGS: Desenvolupament d'aplicacions webs (DAW) 1A
     Mòdul: 0484 Bases de dades. 
-    AUTORS: _______________________________
-    DATA: ________________
+    AUTORS: Ricardo Martín Díaz, Pau Bosch Pérez
+    DATA: 12/02/2025
 ****************************************************** */
 
 -- Pregunta 1
-select 'No ho sé';
+select nom,icao from companyia where pais = 'Spain' order by icao;
 
 -- Pregunta 2
 select 'No ho sé';
