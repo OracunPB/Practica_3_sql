@@ -39,11 +39,11 @@ from avio
 where any_fabricacio = 2008
   and (fabricant = "Concorde" or companyia = "Alitalia");
 
--- Pregunta 6 DUDA AQUÍ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! no encuentro nada de "Barcelona"
-select concat (cognom,", ",nom)
+-- Pregunta 6 (se puede usar adreca is not null para que nos de los que no son nulls pero además podemos poner el adreca incluye Barcelona)
+select concat (cognom,", ",nom) as nom_complet
 from passatger
-where nom like '%k%k%'
-  or cognom like '%k%k%'
+where nom like '%k%k%' or cognom like '%k%k%'
+  and adreca = "%Barcelona%"
 order by cognom;
 
 -- Pregunta 7
