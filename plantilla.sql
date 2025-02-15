@@ -47,10 +47,28 @@ where nom like '%k%k%' or cognom like '%k%k%'
 order by cognom;
 
 -- Pregunta 7
-select 'No ho sé';
+select DISTINCT fabricant
+from avio
+where any_fabricacio = 2000
+order by fabricant;
 
 -- Pregunta 8
-select 'No ho sé';
+select cognom, nom, date_format(data_naix, '%d/%m/%Y (%W)') as "naixement"
+from passatger
+where nom not like "%a%"
+  and YEAR(data_naix) = 2003
+  and MONTH(data_naix) = 10
+order by naixement, cognom;
 
 -- Pregunta 9
-select 'No ho sé';
+select nom, cognom, telefon, data_naix
+from passatger
+where ((YEAR(CURDATE()) - YEAR(data_naix) between 54 and 55)
+  and data_naix is not null)
+  and (telefon like "________1"
+    or telefon like "________3"
+    or telefon like "________5"
+    or telefon like "________7"
+    or telefon like "________9")
+  and adreca is null
+order by data_naix, nom;
