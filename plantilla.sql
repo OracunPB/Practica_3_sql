@@ -15,7 +15,7 @@ order by icao;
 -- Pregunta 2
 select num_serie, fabricant, any_fabricacio as "any", companyia
 from avio
-where fabricant not like "Boeing"
+where fabricant not like "%Boeing%" -- Le he añadido % %, sin ellas mostraba fabricante Boeing
   and any_fabricacio >= 2020
 order by any_fabricacio, fabricant, num_serie;
 
