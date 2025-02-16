@@ -25,6 +25,14 @@ from aeroport
 where pais = 'Spain'
 order by nom;
 
+-- (Pequeña corrección: Para concatenar en MySQL se usan comillas simples, pero COM VULGUIS, funciona igual creo)
+
+SELECT CONCAT('L''aeroport ', nom, ' està a ', ciutat, ' i va ser construït l''any ', any_construccio) AS aeroport
+FROM aeroport
+WHERE pais = 'Spain'
+ORDER BY nom;
+
+
 -- Pregunta 4
 select nom, pais, char_length(nom) as "longitud"
 from aeroport
