@@ -62,12 +62,15 @@ where any_fabricacio = 2000
 order by fabricant;
 
 -- Pregunta 8
-select cognom, nom, date_format(data_naix, '%d/%m/%Y (%W)') as "naixement"
+select cognom, nom, date_format(data_naix, '%d/%m/%Y (%W)') as naixement
 from passatger
 where nom not like "%a%"
   and YEAR(data_naix) = 2003
   and MONTH(data_naix) = 10
 order by naixement, cognom;
+order by data_naix desc, cognom;
+-- order by no funciona con alias ('naixement')
+-- y el enunciado dice que el orden ha de ser desc (data_naix)
 
 -- Pregunta 9
 select nom, cognom, telefon, data_naix
