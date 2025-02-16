@@ -71,11 +71,14 @@ order by naixement, cognom;
 order by data_naix desc, cognom;
 -- order by no funciona con alias ('naixement')
 -- y el enunciado dice que el orden ha de ser desc (data_naix)
+-- (el mes joves abans)
 
 -- Pregunta 9
 select nom, cognom, telefon, data_naix
 from passatger
 where ((YEAR(CURDATE()) - YEAR(data_naix) between 54 and 55)
+WHERE TIMESTAMPDIFF(YEAR, data_naix, CURDATE()) BETWEEN 54 AND 55
+-- TIMESTAMPDIFF tiene en cuenta la fecha actual, es más preciso
   and data_naix is not null)
   and (telefon like "________1"
     or telefon like "________3"
