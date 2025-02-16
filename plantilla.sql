@@ -45,7 +45,7 @@ order by longitud desc, pais;
 select num_serie
 from avio
 where any_fabricacio = 2008
-  and (fabricant = "Concorde" or companyia = "Alitalia");
+  and (fabricant = 'Concorde' or companyia = 'Alitalia');
 
 -- Pregunta 6 (se puede usar adreca is not null para que nos de los que no son nulls pero además podemos poner el adreca incluye Barcelona)
 select concat (cognom,", ",nom) as nom_complet
